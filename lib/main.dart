@@ -38,10 +38,11 @@ class _BallState extends State<Ball> {
   Widget build(BuildContext context) {
     return Center(
       child: TextButton(
-        child: Image.asset('images/ball1.png'),
+        child: Image.asset('images/ball$ballNumber.png'),
         onPressed: () {
-          ballNumber = randomNumber();
-          print('I got clicked $ballNumber');
+          setState(() {
+            ballNumber = randomNumber() + 1;
+          });
         },
       ),
     );
